@@ -1,0 +1,31 @@
+<?php
+
+/* 
+    $profile = $_SESSION['user']['user_info'][0];
+
+    $arrayOptions = array(//'home.php'=> 'Home',
+                          'index.php'=> 'Products',
+                          'viewCart.php'=> 'Cart',
+                          'index.php'=> 'Logout',
+                          'createProduct.php'=> 'Admin Product');
+
+            if($profile == 'user' ){
+                unset($arrayOptions['createProduct.php']);
+            
+            }
+            if($profile == 'adm'){
+              unset($arrayOptions['viewCart.php']);
+
+
+            }
+
+  echo '<ul>';
+    foreach ($arrayOptions as $key => $value) {
+      echo '<li><a href="'.$key.'">'.$value.'</a></li>';
+  }
+ 
+  echo '</ul>';
+ */
+  
+?>
+

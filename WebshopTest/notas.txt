@@ -1,0 +1,110 @@
+colocar o nome do usuario no recibo.
+
+
+em index
+
+ require_once('./class/database.php');
+ 
+
+
+ $class_pdo = new Database(); //preciso mesmo instanciar database ou so inportar ja esta ok?
+
+ nao entendi o pq dessa verificacao:
+
+   if( isset($_SESSION['user_info'][0]['role_id'] )  == 'user'){
+
+        header('Location: ../index.php');
+
+        return false;
+
+    }
+
+
+    addslashes
+    falta logout
+
+    em form creat product nao esta caindo no else
+
+    <?php 
+            foreach ($listProducts as $products) {   ?>
+             <?php  
+
+             $path = "./modules/image";
+             $image =  $products->image;
+                echo '<img src="' . $path . $image . '" style="width:200px;"><br>';
+
+
+                echo "Product name: " . $products['name'] . "<br><br>"; 
+                echo "Desription: ".  $products['description']. "<br><br>"; 
+                echo "Price: " . $products['name'] . "<br><br>";  
+                ?>
+
+                <a href="addToCart">Add to Cart</a><br><br>
+                <a href="formAddtoCart.php?id=<?php echo $products['id'];?>"></a>
+
+
+               
+                <?php }  ?>
+
+
+
+
+                <?php 
+                foreach ($listProducts as $product) {
+                    $path = "./modules/image";
+                    $images = explode(',', $product['image']);
+
+                    foreach ($images as $image) {
+                        echo '<img src="' . $path . '/' . trim($image) . '" style="width:200px;"><br>';
+                    }
+
+                    echo "Product name: " . $product['name'] . "<br><br>"; 
+                    echo "Description: " . $product['description'] . "<br><br>"; 
+                    echo "Price: " . $product['price'] . "<br><br>";  
+                    ?>
+
+                    <a href="formAddtoCart.php?id=<?php echo $product['id'];?>">Add to Cart</a><br><br>
+
+                <?php } ?>
+    
+    colar formFinishOrder.php
+        create de order
+        classes:
+        product_in_Card
+        cart.php
+        viewcart
+         public function getProductInCartAndProductId cart
+        
+
+
+    NO SQL
+    colocar que credit card = null
+
+    fotos perguntar o eduardo
+
+    desenho do banco de dados
+    
+
+
+$path = "../modules/image/"; 
+                    $image =  $class_prod[0]['image'];
+                    echo '<img src="' . $path . $image . '" style="width:200px;"><br>'; 
+
+                  
+                  
+  $class_prod = $class_prod->get($product['product_id']);
+                    $qtt_prod = $class_prodInCart->getQuantityProductInCart($_SESSION['card_id'], $product['product_id']);
+
+
+                    /* $path = "/modules/image/";
+                    $image =  $class_prod[0]['image'];
+                    echo '<img src="' . $path . $image . '" style="width:200px;"><br>'; */
+
+                    ?>
+                    
+                    <p>Name: <?php echo $class_prod[0]['name']?> </p>
+                    <p>Quantity: </p>
+                    <p>Preis: <?php echo $class_prod[0]['preis']?> </p>
+
+                    var_dump($class_prod);
+
